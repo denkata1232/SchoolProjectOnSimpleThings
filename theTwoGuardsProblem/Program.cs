@@ -1,4 +1,4 @@
-﻿using System.Text.RegularExpressions;
+using System.Text.RegularExpressions;
 using AngouriMath;
 using AngouriMath.Extensions;
 namespace theTwoGuardsProblem
@@ -33,15 +33,17 @@ namespace theTwoGuardsProblem
             Console.Write("which guard or door are you asking:");
             bool fate;
             string choice = Console.ReadLine();
-            while (choice != "door1" || choice != "door2")
+            while (choice != "door1" && choice != "door2")
             {
                 if (choice == "guard1")
                 {
                     fate = !(ex.EvaluableBoolean^guard1);
+                    Console.WriteLine(fate);
                 }
                 else if(choice == "guard2")
                 {
                     fate= !(ex.EvaluableBoolean ^ guard2);
+                    Console.WriteLine(fate);
                 }
                 choice = Console.ReadLine();
             }
